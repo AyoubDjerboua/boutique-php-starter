@@ -15,6 +15,8 @@ echo "Nombre total d'articles : " . count($groceries);
 //4. Ajouter 2 articles à la fin
 $groceries[] = "Fromage";
 $groceries[] = "Pantalon";
+//OU
+//array_push($groceries, "Fromage", "Pantalon");
 
 //5. Supp 3ème article
 unset ($groceries[2]); //oui c'est le troisième
