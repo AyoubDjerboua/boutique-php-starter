@@ -1,6 +1,6 @@
 <?php
 
-$priceHT = 10; //prix de base pré-taxe
+$priceHT = 250; //prix de base pré-taxe
 $vatRate = 25; //taxe valeur
 $discountRate = 25; // valeur discount
 
@@ -21,11 +21,15 @@ function calculateDiscount($price, $percentage)
 }
 
 
+echo "Prix de base : $priceHT <br>";
+
 $VAT = calculateVAT($priceHT, $vatRate);
 echo "Fonction 1 : Valeur TVA = " . $VAT . "<br>";
 
 $priceTTC = calculateIncludingTax($priceHT, $vatRate);
 echo "Fonction 2 : Prix TTC = " . $priceTTC . "<br>";
+
+echo "Valeur de la remise : $discountRate <br>";
 
 $priceDiscount = calculateDiscount($priceTTC, $discountRate);
 echo "Fonction 3 : Discount = " . $priceDiscount . "<br>";
