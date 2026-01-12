@@ -12,3 +12,4 @@ function greetClient($name)
 }
 
 greetClient("Joshua");
+greet();
