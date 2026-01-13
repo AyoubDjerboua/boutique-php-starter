@@ -1,4 +1,8 @@
 <?php
+// helpers.php
+function formatPrice($amount, $currency = "€") {
+    return number_format($amount, 2, ",", " ") . " " . $currency;
+}
 
 function isInStock($stock)
 {
@@ -20,8 +24,3 @@ function canOrder($stock, $quantity)
 {
     return $stock >= $quantity; //return true si stock supérieur ou égal a la quantité disponible
 }
-
-echo isInStock(10) ? "In stock" : "Out of stock"; // Affiche "In stock" IF TRUE, et "out of stock" IF FALSE
-echo isOnSale(10) ? "On sale" : "Not on sale"; // Affiche "On sale"
-echo isNew("2026-01-01") ? "New" : "Not new"; // affiche New si date entrée ne dépasse pas de 30 jours la date actuelle
-echo canOrder(5, 3) ? "Article disponible" : "Article indisponible";// affiche Article disponible si stock >= quantité demandée
