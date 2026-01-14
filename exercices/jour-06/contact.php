@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $message = htmlspecialchars($_POST['message'] ?? "");
 
     // Vérifications simples
-    if (!$name || !$email || !$message) {
+    if (!$name || !$email || !$message) {//si il n'y a ni name, ni email, ni message
         echo "<p style='color:red'>Tous les champs sont requis.</p>";
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         echo "<p style='color:red'>L'email n'est pas valide.</p>";
