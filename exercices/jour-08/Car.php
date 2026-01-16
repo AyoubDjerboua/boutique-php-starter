@@ -3,9 +3,9 @@
 class Car
 {
     // Propriétés (les données)
-    public string $brand;
-    public string $model;
-    public int $year;
+    private string $brand;
+    private string $model;
+    private int $year;
 
     // Constructeur
     public function __construct(string $brand, string $model, int $year)
@@ -15,7 +15,7 @@ class Car
         $this->year = $year;
     }
 
-    public function getAge()
+    public function getAge() : int
     {
         $currentYear = date("Y");
         return $currentYear - $this->year;

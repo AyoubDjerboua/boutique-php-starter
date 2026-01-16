@@ -9,7 +9,7 @@ class User
     public string $registrationDate;
 
     // Constructeur
-    public function __construct(string $name, string $email, ?string $registrationDate = null)
+    public function __construct(string $name, string $email, ?string $registrationDate = null) //    Le ? avant string indique que la valeur peut être de type string ou null
     {
         $this->name = $name;
         $this->email = $email;
