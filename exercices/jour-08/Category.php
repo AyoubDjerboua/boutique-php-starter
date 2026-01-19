@@ -22,9 +22,10 @@ class Category
     }
 }
 
-$catato = new Category(3, "Pomme", "Miam juteux");
-$catato2 = new Category(3, "Pomme", "Miam juteux");
-$catato3 = new Category(3, "Pomme", "Miam juteux");
-$catato4 = new Category(3, "Pomme", "Miam juteux");
+$catato = new Category(1, "Pomme d'amour", "Miam juteux");
+$catato2 = new Category(2, "Poire au chocolat", "Miam granuleux");
+$catato3 = new Category(3, "Caramel au sucre", "Miam diabète");
 
-echo $catato->getSlug();
+echo $catato->getSlug() . "<br>";
+echo $catato2->getSlug() . "<br>";
+echo $catato3->getSlug() . "<br>";

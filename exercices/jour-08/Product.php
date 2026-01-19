@@ -46,7 +46,7 @@ class Product
 }
 
 
-$product = new Product("1", "Parpaing", "Solide sur les appuis", 29.99, 13, "Construction");
+$product = new Product(1, "Parpaing", "Solide sur les appuis", 29.99, 13, "Construction");
 
 
 echo number_format($product->getPriceIncludingTax(), 2, ',', ' ') . "€ <br>"; //affiche le prix de l'objet
