@@ -3,7 +3,6 @@ session_start();
 
 session_destroy();           // Tout détruire
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

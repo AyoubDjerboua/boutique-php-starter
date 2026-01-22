@@ -2,19 +2,19 @@
 
 $stock = 2;
 $active = true;
-$promoEnDate = "2026-3-19";
+$promoEnDate = '2026-3-19';
 
 if ($stock > 0 && $active = true) {
-    echo "Available";
+    echo 'Available';
 } else {
-    echo "Not available";
+    echo 'Not available';
 }
 
-echo "<br>";
+echo '<br>';
 
-$today = date("Y-m-d");
+$today = date('Y-m-d');
 if ($today < $promoEnDate) {
-    echo "On promo";
+    echo 'On promo';
 } else {
-    echo "No promo";
+    echo 'No promo';
 }

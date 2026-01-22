@@ -117,6 +117,7 @@ class Cart
         foreach ($this->items as $item) {
             $total += $item->getTotal();
         }
+
         return $total;
     }
 
@@ -178,17 +179,15 @@ class Address
     public function addAddress() {}
 }
 
-
 $userTablo = [
-    ["Paolo"]
+    ['Paolo'],
 ];
 
+$food = new Category(1, 'Alimentation');
+$sport = new Category(2, 'Sport');
 
-$food = new Category(1, "Alimentation");
-$sport = new Category(2, "Sport");
-
-$product1 = new Product(1, "Ballon", 15.99, $sport);
-$product2 = new Product(2, "Beignet", 2.50, $food);
+$product1 = new Product(1, 'Ballon', 15.99, $sport);
+$product2 = new Product(2, 'Beignet', 2.50, $food);
 
 $item1 = new CartItem($product1, 2);
 $item2 = new CartItem($product2);
@@ -197,5 +196,5 @@ $item1->increment(); // 3
 $item2->increment(); // 2
 $item2->decrement(); // 1
 
-echo $item1->getProduct()->getName() . " : " . $item1->getQuantity() . " = " . $item1->getTotal() . " €<br>";
-echo $item2->getProduct()->getName() . " : " . $item2->getQuantity() . " = " . $item2->getTotal() . " €<br>";
+echo $item1->getProduct()->getName().' : '.$item1->getQuantity().' = '.$item1->getTotal().' €<br>';
+echo $item2->getProduct()->getName().' : '.$item2->getQuantity().' = '.$item2->getTotal().' €<br>';

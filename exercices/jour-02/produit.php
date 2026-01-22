@@ -1,16 +1,16 @@
 <?php
 
 $product = [
-    "name" => "iPhone 10", 
-    "description" => "Téléphone avec les bords bien arrondis on rebondit dessus", 
-    "price" => 1299.99, 
-    "stock" => 2, 
-    "category" => "Luxe", 
-    "brand" => "Apple"
-    ];
-    $product['dateAdded'] = date('d/m/Y'); // format jour/mois/année//MERCI CHATGPT exo 2 part 4
-    //$product['promo'] = 10;  ouais bon flemme
-    $pricePromo = $product['price'] * 0.9;
+    'name' => 'iPhone 10',
+    'description' => 'Téléphone avec les bords bien arrondis on rebondit dessus',
+    'price' => 1299.99,
+    'stock' => 2,
+    'category' => 'Luxe',
+    'brand' => 'Apple',
+];
+$product['dateAdded'] = date('d/m/Y'); // format jour/mois/année//MERCI CHATGPT exo 2 part 4
+// $product['promo'] = 10;  ouais bon flemme
+$pricePromo = $product['price'] * 0.9;
 ?>
 
 <!DOCTYPE html>

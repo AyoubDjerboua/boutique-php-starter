@@ -4,7 +4,9 @@ class Car
 {
     // Propriétés (les données)
     private string $brand;
+
     private string $model;
+
     private int $year;
 
     // Constructeur
@@ -15,9 +17,10 @@ class Car
         $this->year = $year;
     }
 
-    public function getAge() : int
+    public function getAge(): int
     {
-        $currentYear = date("Y");
+        $currentYear = date('Y');
+
         return $currentYear - $this->year;
     }
 
@@ -27,10 +30,10 @@ class Car
     }
 }
 
-$car1 = new Car("Toyota", "Corolla", 2018);
-$car2 = new Car("Peugeot", "208", 2020);
-$car3 = new Car("BMW", "Serie 3", 2015);
+$car1 = new Car('Toyota', 'Corolla', 2018);
+$car2 = new Car('Peugeot', '208', 2020);
+$car3 = new Car('BMW', 'Serie 3', 2015);
 
-echo $car1->display() . "<br>";
-echo $car2->display() . "<br>";
-echo $car3->display() . "<br>";
+echo $car1->display().'<br>';
+echo $car2->display().'<br>';
+echo $car3->display().'<br>';

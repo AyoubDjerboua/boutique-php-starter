@@ -1,19 +1,19 @@
 <?php
 session_start();
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $username = $_POST["username"] ?? '';
-    $password = $_POST["password"] ?? '';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = $_POST['username'] ?? '';
+    $password = $_POST['password'] ?? '';
     $message = '';
 
-    if ($username === "admin" && $password === "1234") { //si id sess = admin et mdp sess = 1234
-        $_SESSION["user"] = $username; //id sess devient admin
-        header("Location: dashboard.php");
+    if ($username === 'admin' && $password === '1234') { // si id sess = admin et mdp sess = 1234
+        $_SESSION['user'] = $username; // id sess devient admin
+        header('Location: dashboard.php');
         exit;
-    } else if ($username === '' || $password === '') {
-        $message = "Merci de remplir tous les champs";
+    } elseif ($username === '' || $password === '') {
+        $message = 'Merci de remplir tous les champs';
     } else {
-        $message = "Identifiants incorrects";
+        $message = 'Identifiants incorrects';
     }
 }
 

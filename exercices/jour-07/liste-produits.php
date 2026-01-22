@@ -4,20 +4,20 @@ session_start();
 
 try {
     $pdo = new PDO(
-        "mysql:host=localhost;dbname=boutique;charset=utf8mb4",
-        "dev",
-        "dev",
+        'mysql:host=localhost;dbname=boutique;charset=utf8mb4',
+        'dev',
+        'dev',
         [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
     );
-    echo "✅ Connexion réussie !";
+    echo '✅ Connexion réussie !';
 } catch (PDOException $e) {
-    echo "❌ Erreur : " . $e->getMessage();
+    echo '❌ Erreur : '.$e->getMessage();
 }
 
 // SELECT avec paramètre
-$stmt = $pdo->prepare("SELECT * FROM products"); //prépare
-$stmt->execute(); //execute
-$products = $stmt->fetchAll(PDO::FETCH_ASSOC); //chope tout
+$stmt = $pdo->prepare('SELECT * FROM products'); // prépare
+$stmt->execute(); // execute
+$products = $stmt->fetchAll(PDO::FETCH_ASSOC); // chope tout
 
 ?>
 
@@ -32,12 +32,12 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC); //chope tout
 
 <body>
     <span>
-        <?php foreach ($products as $product) : ?>
-            <?php foreach ($product as $cle => $valeur) : ?>
+        <?php foreach ($products as $product) { ?>
+            <?php foreach ($product as $cle => $valeur) { ?>
                 <p><strong><?= $cle ?> : </strong><?= $valeur ?></p>
-            <?php endforeach; ?>
+            <?php } ?>
             <hr>
-        <?php endforeach; ?>
+        <?php } ?>
     </span>
 
 </body>

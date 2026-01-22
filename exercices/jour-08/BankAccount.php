@@ -21,7 +21,7 @@ class Banco
     {
         if ($amount <= 0) {
             return;
-        } else if ($amount > $this->balance) {
+        } elseif ($amount > $this->balance) {
             return;
         } else {
             $this->balance -= $amount;
@@ -34,9 +34,9 @@ class Banco
     }
 }
 
-$account = new Banco();
+$account = new Banco;
 $account->deposit(100);
 $account->withdraw(500);
 $account->withdraw(10);
 
-echo "Argent sur le compte : " . $account->getBalance();
+echo 'Argent sur le compte : '.$account->getBalance();

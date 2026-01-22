@@ -1,38 +1,53 @@
 <?php
 
-class Product //la class Produit hein
+class Product
 {
-    private int $id;
-    private string $name; //le nom de ton produit
-    private float $price; //le prix, important quand même
-    private Category $category; //RELATION !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    public function __construct(
+        private int $id,
+        private string $name,
+        private float $price,
+        private int $stock
+    ) {}
 
-    public function __construct($id, $name, $price, $category) //je suis doué en bricolage
-    {
-        $this->id = $id;
-        $this->name = $name;
-        $this->price = $price;
-        $this->category = $category;
-    }
-
-    //GETTEEEEEERS
-    public function getId()
+    // Getters
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
 
-    public function getPrice()
+    public function getPrice(): float
     {
         return $this->price;
     }
 
-    public function getCategory()
+    public function getStock(): int
     {
-        return $this->category;
+        return $this->stock;
+    }
+
+    // Setters si besoin (update)
+    public function setName(string $name): void
+    {
+        $this->name = $name;
+    }
+
+    public function setPrice(float $price): void
+    {
+        $this->price = $price;
+    }
+
+    public function setStock(int $stock): void
+    {
+        $this->stock = $stock;
+    }
+
+    public function setId(int $id): void
+    {
+        $this->id = $id;
     }
 }

@@ -1,15 +1,14 @@
 <?php
+
 class Cart
 {
     /** @var CartItem[] */
+    private array $items = []; // tableau vide qui contiendra les produits du panier
 
-
-    private array $items = []; //tableau vide qui contiendra les produits du panier
-
-    //AFFICHAGE DES ITEMS DU TABLEAU
-    public function getItems(): array //permet de récupérer les items du panier
+    // AFFICHAGE DES ITEMS DU TABLEAU
+    public function getItems(): array // permet de récupérer les items du panier
     {
-        return $this->items; //retourne le tableau items
+        return $this->items; // retourne le tableau items
     }
 
     /**
@@ -38,9 +37,8 @@ class Cart
     /** Met à jour la quantité d'un produit déjà présent dans le panier */
     public function update(int $productId, int $quantity): void
     {
-        if (isset($this->items[$productId])) //IF produit déjà présent dans le panier
-        {
-            $this->items[$productId]->setQuantity($quantity); //on set la quantity
+        if (isset($this->items[$productId])) { // IF produit déjà présent dans le panier
+            $this->items[$productId]->setQuantity($quantity); // on set la quantity
         }
     }
 
@@ -48,10 +46,10 @@ class Cart
     public function getTotal(): float
     {
         $total = 0;
-        foreach ($this->items as $item) //Parcourt chaque CartItem du panier
-        {
+        foreach ($this->items as $item) { // Parcourt chaque CartItem du panier
             $total += $item->getTotal();
         }
+
         return $total;
     }
 

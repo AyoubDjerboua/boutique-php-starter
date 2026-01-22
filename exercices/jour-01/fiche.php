@@ -1,5 +1,5 @@
 <?php
-$name = "Pommes";
+$name = 'Pommes';
 $price = 149.99;
 $stock = 3000;
 ?>
@@ -13,6 +13,6 @@ $stock = 3000;
 <body>
     <h1>Boutique de <?php echo $name ?><h1>
         <p>Prix à l'unité : <?php echo $price?>€</p>
-        <span><?= $stock > 0 ? "En stock" : "Rupture" ?></span> 
+        <span><?= $stock > 0 ? 'En stock' : 'Rupture' ?></span> 
 </body>
 </html>

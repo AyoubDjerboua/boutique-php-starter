@@ -2,10 +2,11 @@
 
 class User
 {
-
     // Propriétés (les données)
     public string $name;
+
     public string $email;
+
     public string $registrationDate;
 
     // Constructeur
@@ -15,7 +16,7 @@ class User
         $this->email = $email;
 
         if ($registrationDate === null) {
-            $this->registrationDate = date("Y-m-d");
+            $this->registrationDate = date('Y-m-d');
         } else {
             $this->registrationDate = $registrationDate;
         }
@@ -31,8 +32,8 @@ class User
     }
 }
 
-$user1 = new User("Alice", "alice@email.com");
-$user2 = new User("Bob", "bob@email.com", "2025-12-20");
+$user1 = new User('Alice', 'alice@email.com');
+$user2 = new User('Bob', 'bob@email.com', '2025-12-20');
 
-echo $user1->name . " est nouveau ? " . ($user1->isNewMember() ? "Oui" : "Non") . "<br>";
-echo $user2->name . " est nouveau ? " . ($user2->isNewMember() ? "Oui" : "Non") . "<br>";
+echo $user1->name.' est nouveau ? '.($user1->isNewMember() ? 'Oui' : 'Non').'<br>';
+echo $user2->name.' est nouveau ? '.($user2->isNewMember() ? 'Oui' : 'Non').'<br>';

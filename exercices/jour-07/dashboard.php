@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-if (isset($_SESSION["user"])) {
-    $message = "Bonjour " . $_SESSION["user"];
+if (isset($_SESSION['user'])) {
+    $message = 'Bonjour '.$_SESSION['user'];
 } else {
-    header("Location:login.php");
+    header('Location:login.php');
     exit;
 }
 

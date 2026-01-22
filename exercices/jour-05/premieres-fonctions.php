@@ -1,9 +1,8 @@
 <?php
 
-
 function greet()
 {
-    echo "Bienvenue sur la boutique !";
+    echo 'Bienvenue sur la boutique !';
 }
 
 function greetClient($name)
@@ -11,5 +10,5 @@ function greetClient($name)
     echo "Bonjour $name !";
 }
 
-greetClient("Joshua");
+greetClient('Joshua');
 greet();

@@ -1,31 +1,30 @@
 <?php
 
 $products = [
-    ["name" => "T-shirt rouge"],
-    ["name" => "Jean bleu"],
-    ["name" => "Pull noir"],
-    ["name" => "Casquette verte"],
-    ["name" => "Chaussures blanches"],
-    ["name" => "Sac à dos"],
-    ["name" => "Lunettes de soleil"],
-    ["name" => "Montre"],
-    ["name" => "Ceinture en cuir"],
-    ["name" => "Veste en jean"]
+    ['name' => 'T-shirt rouge'],
+    ['name' => 'Jean bleu'],
+    ['name' => 'Pull noir'],
+    ['name' => 'Casquette verte'],
+    ['name' => 'Chaussures blanches'],
+    ['name' => 'Sac à dos'],
+    ['name' => 'Lunettes de soleil'],
+    ['name' => 'Montre'],
+    ['name' => 'Ceinture en cuir'],
+    ['name' => 'Veste en jean'],
 ];
 
+$search = $_GET['search'] ?? ''; // valeur par défaut null si rien envoyé
 
-$search = $_GET['search'] ?? ''; //valeur par défaut null si rien envoyé
-
-$results = []; //tableau vide en attente du stockage des infos 
+$results = []; // tableau vide en attente du stockage des infos
 
 if ($search !== []) {
-    foreach ($products as $product)
+    foreach ($products as $product) {
         // Recherche insensible à la casse
-        if (stripos($product["name"], $search) !== false)//stripos : cherche une chaîne de caractère dans une autre chaîne de caractère, ici on cherche $search dans le nom du produit. Renvoie la position de la première occurrence trouvée ou false si non trouvé. !== false pour vérifier que ce n'est pas false (position 0 est considérée comme false en php)
-        {
+        if (stripos($product['name'], $search) !== false) {// stripos : cherche une chaîne de caractère dans une autre chaîne de caractère, ici on cherche $search dans le nom du produit. Renvoie la position de la première occurrence trouvée ou false si non trouvé. !== false pour vérifier que ce n'est pas false (position 0 est considérée comme false en php)
             // Le produit correspond
             $results[] = $product;
         }
+    }
 }
 
 ?>
@@ -56,15 +55,15 @@ if ($search !== []) {
         <ul>
             <?php
             if ($search === '') {
-                echo "Entrez un terme pour rechercher";
-            } else if (!empty($results)) {
+                echo 'Entrez un terme pour rechercher';
+            } elseif (! empty($results)) {
                 foreach ($results as $product) {
-                    echo "<li>" . htmlspecialchars($product["name"]) . "</li>";
+                    echo '<li>'.htmlspecialchars($product['name']).'</li>';
                 }
             } else {
-                echo "Aucun résultat";
+                echo 'Aucun résultat';
             }
-            ?>
+?>
         </ul>
 
 </body>
